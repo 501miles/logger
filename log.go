@@ -207,7 +207,7 @@ func (this *LocalLogger) writeToLoggers(when time.Time, msg *loginfo, level int)
 			continue
 		}
 
-		msgStr := when.Format(this.timeFormat) + " [" + msg.Level + "] " + "[" + msg.Path + "] " + msg.Content
+		msgStr := when.Format(this.timeFormat) + " [" + msg.Level + "] " + "[ " + msg.Path + " ] " + msg.Content
 		err := l.LogWrite(when, msgStr, level)
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "unable to WriteMsg to adapter:%v,error:%v\n", l.name, err)

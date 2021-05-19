@@ -48,7 +48,7 @@ func (c *consoleLogger) Init(jsonConfig string) error {
 
 	err := json.Unmarshal([]byte(jsonConfig), c)
 	if runtime.GOOS == "windows" {
-		c.Colorful = false
+		c.Colorful = true
 	}
 
 	if l, ok := LevelMap[c.Level]; ok {
